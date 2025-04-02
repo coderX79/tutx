@@ -1,0 +1,66 @@
+/* Original sidebar width was 300px - reducing to 250px */
+.profile-layout {
+    grid-template-columns: minmax(200px, 250px) 1fr; /* Reduced from minmax(250px, 300px) */
+  }
+  
+  /* Ensure content doesn't overflow */
+  .profile-card {
+    width: 100%; /* Takes full width of grid column */
+    max-width: 250px; /* Hard limit */
+  }
+  
+  /* Adjust avatar size proportionally */
+  .avatar-wrapper {
+    width: 100px; /* Reduced from 120px */
+    height: 100px;
+  }
+  
+  .profile-avatar {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Adjust font sizes */
+  .profile-meta h2 {
+    font-size: 1.25rem; /* Reduced from 1.5rem */
+  }
+  
+  /* Compact stats layout */
+  .profile-stats {
+    grid-template-columns: 1fr; /* Stack vertically */
+    gap: 0.5rem; /* Reduced spacing */
+  }
+  
+  .stat-item {
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  /* Compact buttons */
+  .profile-actions {
+    gap: 0.5rem;
+  }
+  
+  .edit-profile-btn, 
+  .settings-btn {
+    padding: 0.5rem; /* Reduced from 0.75rem */
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .profile-layout {
+      grid-template-columns: minmax(180px, 220px) 1fr; /* Even narrower on tablets */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .profile-layout {
+      grid-template-columns: 1fr; /* Full width on mobile */
+    }
+    
+    .profile-card {
+      max-width: 100%; /* Full width cards on mobile */
+    }
+  }

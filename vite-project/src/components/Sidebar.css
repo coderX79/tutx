@@ -1,0 +1,154 @@
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: 2px 0px 5px rgb(255, 255, 255);
+    transition: width 0.3s ease-in-out;
+    color: rgb(11, 11, 11);
+}
+
+/* Sidebar Collapsed */
+.sidebar.closed {
+    width: 60px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Menu Button */
+.menu-btn {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0%;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-container img {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Ensures square aspect ratio */
+    object-fit: contain; /* Ensures it fits well */
+    border-radius: 50%; /* Optional: Makes it circular */
+}
+
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 10px 0;
+    text-align: left;
+}
+
+/* Sidebar Links */
+.sidebar-menu a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    display: block;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+.sidebar-menu a:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+/* Active Link */
+.sidebar-menu a.active {
+    background-color: red;
+    color: white;
+}
+
+/* Hide text when sidebar is collapsed */
+.sidebar.closed .logo-container h2,
+.sidebar.closed .sidebar-menu h4 {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar.open {
+        width: 260px;
+    }
+
+    .sidebar.closed .sidebar-menu h4 {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+        right: 8px;
+    }
+}
+/* Hide logo when sidebar is closed */
+.sidebar.closed .logo {
+    display: none;
+}
+
+
+/* Adjust content area when sidebar is collapsed */
+
+/* Hide the text when sidebar is closed */
+.sidebar.closed .link-text {
+    display: none;
+}
+
+/* Ensure icons are always visible */
+.icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+.sidebar.closed .sidebar-link {
+    display: flex;
+    justify-content: center;
+    padding: 0%;
+}
+.sidebar.closed li {
+    margin-top: 10px;
+}
+
+.sidebar.closed .icon {
+    margin-right: 0; /* Remove extra space when sidebar is closed */
+    text-align: center;
+    font-size: 25px;
+}
+.sidebar.closed .sidebar-menu{
+    padding-top: 50px;
+}
